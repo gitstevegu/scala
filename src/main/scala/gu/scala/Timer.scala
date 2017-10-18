@@ -8,10 +8,15 @@ package gu.scala
  * called functional programming.
  */
 object Timer {
+  
+  
+  
   def oncePerSecond(callback: () => Unit) {
-    while (true) {
+    var count:Int = 0
+    while (count < 20) {
       callback()
       Thread sleep 1000
+      count = count + 1
     }
   }
   
